@@ -1,0 +1,16 @@
+repositories { maven { url = uri('repo') } }
+configurations { repro { canBeConsumed = false } }
+dependencies {
+    modules {
+        module('example.legacy:library') { replacedBy('example.modern:library') }
+    }
+    repro 'example.modern:library:1'
+    repro 'example.modern:library:2'
+    repro 'example:bridge:1'
+}
+
+tasks.register('reproduce') {
+    doLast {
+        configurations.repro.files.each { println it.name }
+    }
+}

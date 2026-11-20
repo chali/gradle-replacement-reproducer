@@ -1,0 +1,6 @@
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>example.modern</groupId><artifactId>library</artifactId><version>3</version>
+  <dependencies></dependencies>
+</project>
